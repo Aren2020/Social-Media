@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.conf import settings
 from django.utils.text import slugify
+from django.core.validators import RegexValidator
 
 class Image(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
@@ -10,7 +11,7 @@ class Image(models.Model):
     title = models.CharField(max_length = 200)
     slug = models.SlugField(max_length = 200,
                             blank = True)
-    url = models.URLField(max_length = 2000)
+    url = models.URLField(max_length = 2000, blank = True)
     image = models.ImageField(upload_to = 'images/%Y/%m/%d/')
     description = models.TextField(blank = True)
     created = models.DateField(auto_now_add = True)

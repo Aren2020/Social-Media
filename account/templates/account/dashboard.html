@@ -15,7 +15,15 @@
     </p>
     <p>
         You also can upload image to your account ->
-        <a href="#">Upload Image</a>
+        <form action="{% url 'images:upload' %}" enctype="multipart/form-data"  id="uploadImageForm" method="post">
+            <input id="uploadImageInput" name="image" type="file">
+            <a id="uploadImageUrl" target="_blank" style="margin-left:15px;">See uploaded image here</a>
+            <input type="text" name="title" placeholder="Title">
+            <textarea name="description">Your description here</textarea>
+            
+            {% csrf_token %}
+            <input type="submit" value="Upload">
+        </form>
     </p>
     <p>
         You can also <a href="{% url 'edit' %}">edit your profile</a> 
@@ -27,4 +35,19 @@
             {% include "actions/action/detail.html" %}
         {% endfor %}
     </div>
+
+    <script>
+        const fileInput = document.getElementById('uploadImageInput')
+        const urlInput = document.getElementById('uploadImageUrl')
+        uploadImageInput.addEventListener('change', function(){
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const fileUrl = URL.createObjectURL(file);
+                urlInput.href = fileUrl;
+            }
+            else {
+                urlInput.href = '';
+            }
+        })
+    </script>
 {% endblock %}

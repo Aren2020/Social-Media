@@ -34,6 +34,20 @@ def image_create(request):
                   {'section': 'images',
                    'form': form})
 
+@login_required
+@require_POST
+def image_upload(request):
+    data = request.POST
+    image = Image(
+        user = request.user,
+        title = data['title'],
+        image = request.FILES.get('image'),
+        description = data['description'],
+    )
+
+    image.save()
+    return redirect(image.get_absolute_url())
+
 def image_detail(request, id, slug):
     image = get_object_or_404(Image, id=id, slug = slug)
     total_views = r.incr(f'image:{image.id}:views') # r['image'][1]['views'] get_or_create
