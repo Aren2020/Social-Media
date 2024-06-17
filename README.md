@@ -1,6 +1,4 @@
-# Authentication and Social Login System
-
-This project implements a comprehensive authentication system for a website, including user registration, login, logout, password management, social login, and more.
+# Authentication and Social Media System
 
 ## Features
 
