@@ -68,4 +68,4 @@
    - python manage.py migrate
 5. **Run the development server:**
    - python manage.py runserver
-   - python manage.py runsslserver (run the server using HTTPS necessary for social authentication to work):
+   - python manage.py runsslserver (run the server using HTTPS necessary for social authentication to work)
