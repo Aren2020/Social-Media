@@ -57,7 +57,7 @@
 ## Installation
 
 1. **Clone the repository**:
-   - git clone https://github.com/yourusername/your-repo-name.git
+   - git clone https://github.com/Aren2020/BookMarkWeb.git
 2. **Create and activate a virtual environment:**
    - python -m venv env
    - source env/bin/activate
