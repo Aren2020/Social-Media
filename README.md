@@ -57,15 +57,26 @@
 ## Installation
 
 1. **Clone the repository**:
-   - git clone https://github.com/Aren2020/BookMarkWeb.git
+   ```sh
+   git clone https://github.com/Aren2020/Social-Media.git
+   cd Social-Media
+   ```
 2. **Create and activate a virtual environment:**
-   - python -m venv env
-   - source env/bin/activate
-3. **Install the dependencies:** 
-   - pip install -r requirements.txt
+   ```sh
+   python -m venv env
+   source env/bin/activate
+   ```
+3. **Install the dependencies:**
+   ```sh
+   pip install -r requirements.txt
+   ```
 4. **Apply migrations:**
-   - python manage.py makemigrations
-   - python manage.py migrate
+   ```sh
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
 5. **Run the development server:**
-   - python manage.py runserver
-   - python manage.py runsslserver (run the server using HTTPS necessary for social authentication to work)
+   ```sh
+   python manage.py runserver
+   python manage.py runsslserver (run the server using HTTPS necessary for social authentication to work)
+   ```
